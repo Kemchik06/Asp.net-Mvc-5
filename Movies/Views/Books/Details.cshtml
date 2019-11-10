@@ -1,0 +1,21 @@
+﻿
+
+@model Movies.Models.AudioBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>@Model.Name</h4>
+    <ul>
+        <li>Genre: @Model.Category</li>
+        <li>Release Date: @Model.Description</li>
+        <li>Date Added: @Model.Price</li>
+    </ul>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index",new { papge = 1 },null)
+</p>

@@ -1,0 +1,21 @@
+﻿
+@model Movies.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>@Model.Name</h4>
+    <ul>
+        <li>Genre: @Model.Genre</li>
+        <li>Release Date: @Model.ReleaseDate</li>
+        <li>Date Added: @Model.DateAdded</li>
+        <li>Number in Stock: @Model.NumberInStock</li>
+    </ul>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

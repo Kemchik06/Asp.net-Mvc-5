@@ -1,0 +1,22 @@
+﻿@model Movies.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>@Model.Name</h4>
+    <ul>
+        <li>Membershipo Type: @Model.MembershipType.Name</li>
+        @if (Model.BirthDay != null)
+        {
+            <li>Birthday: @Model.BirthDay</li>
+
+        }
+
+    </ul>
+   
+</div>
+

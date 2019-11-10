@@ -1,0 +1,45 @@
+﻿
+
+
+@using Movies.HtmlHelpers
+
+@model Movies.ViewModels.GameListViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+<p>
+    @Html.ActionLink("NEW Game", "Create", "", new { type = "submit", @class = "btn btn btn-primary" })
+</p>
+
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Category</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var r in @Model.Games)
+        {
+            <tr>
+
+                <td> @Html.ActionLink(r.Name, "Edit", "Games", new { id = r.Id }, null)</td>
+                <td>@r.Category</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Games", new { id = r.Id }, null)</td>
+            </tr>
+
+        }
+
+    </tbody>
+
+
+
+</table>
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("AdminList", new { page = x, category = Model.CurrentCategory }))
+</div>

@@ -1,0 +1,55 @@
+﻿@model Movies.Models.RegisterViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit User</h2>
+
+@using (Html.BeginForm("Save","Users"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.BirthDay)
+        @Html.TextBoxFor(m => m.BirthDay, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BirthDay)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class ="form-control"})
+        @Html.ValidationMessageFor(m => m.Phone)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DrivingLicense)
+        @Html.TextBoxFor(m => m.DrivingLicense, new { @class ="form-control"})
+        @Html.ValidationMessageFor(m => m.DrivingLicense)
+
+    </div>
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.IsSubscribedToNewsletter) Subscribed to Newsletter?
+        </label>
+    </div>
+
+    @Html.HiddenFor(m => m.Password)
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-primary">
+        Save
+    </button>
+}

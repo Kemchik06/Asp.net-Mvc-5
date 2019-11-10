@@ -1,0 +1,62 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
+        <div class="container bg-light">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("New Rental", "New", "Rentals")</li>
+                    @if (User.IsInRole("CanManageMovies"))
+                    {
+                        <li>@Html.ActionLink("Users", "ListOfUsers", "Users")</li>
+                        <li>@Html.ActionLink("Movies", "AdminList", "Movies", new { page = 1 }, null)</li>
+                        <li>@Html.ActionLink("Games", "AdminList", "Games", new { page = 1 }, null)</li>
+                        <li>@Html.ActionLink("Audio Books", "AdminList", "Books", new { page = 1 }, null)</li>
+
+
+                    }
+                    else if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("User", "CurrUser", "Users")</li>
+                        <li>@Html.ActionLink("Movies", "Index", "Movies", new { page = 1 }, null)</li>
+                        <li>@Html.ActionLink("Games", "Index", "Games", new { page = 1 }, null)</li>
+                        <li>@Html.ActionLink("Audio Books", "Index", "Books", new { page = 1 }, null)</li>
+
+
+
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/lib")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

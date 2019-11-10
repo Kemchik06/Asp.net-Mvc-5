@@ -1,0 +1,15 @@
+﻿
+@model Movies.Models.Movie
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm("DeleteConfirm", "Movies"))
+{
+    <h2>Вы уверены , что хотите удалить данного пользователя?</h2>
+    <button type="submit"> Да </button>
+    
+    @Html.HiddenFor(m => m.Id)
+
+}

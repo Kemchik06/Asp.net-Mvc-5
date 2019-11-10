@@ -1,0 +1,33 @@
+﻿
+@using Movies.HtmlHelpers
+
+@model Movies.ViewModels.MovieListViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+<div>
+    @Html.Action("Menu", "Nav")
+</div>
+
+@foreach (var p in @Model.Movies)
+{
+    <div class="well">
+        <h3>
+            <strong>@p.Name</strong>
+
+            <span class="pull-right label label-primary">@p.Price.ToString("# руб")</span>
+        </h3>
+        <span class="lead">@p.Genre</span>
+    </div>
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x, category = Model.CurrentCategory }))
+</div>
+
+

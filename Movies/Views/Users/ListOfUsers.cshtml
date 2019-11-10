@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Movies.Models.ApplicationUser>
+
+<h2>Users</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Email</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var r in Model)
+        {
+        <tr>
+            
+            <td> @Html.ActionLink(r.Name,"Edit","Users",new { id = r.Id},null)</td>
+            <td>@r.Email</td>
+            <td>@Html.ActionLink("Delete","Delete","Users", new { id = r.Id }, null)</td>
+        </tr>
+
+        }
+
+    </tbody>
+</table>

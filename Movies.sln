@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies", "Movies\Movies.csproj", "{B4897770-2507-4108-8A0A-BE8DF2B92D81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesShopApi", "MoviesShop-Api\MoviesShopApi.csproj", "{3D05950F-CE53-402B-BC8C-6393D90F3A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreTests", "StoreTests\StoreTests.csproj", "{AB20C267-8231-4289-ADF7-28F017A01007}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4897770-2507-4108-8A0A-BE8DF2B92D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4897770-2507-4108-8A0A-BE8DF2B92D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4897770-2507-4108-8A0A-BE8DF2B92D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4897770-2507-4108-8A0A-BE8DF2B92D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D05950F-CE53-402B-BC8C-6393D90F3A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D05950F-CE53-402B-BC8C-6393D90F3A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D05950F-CE53-402B-BC8C-6393D90F3A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D05950F-CE53-402B-BC8C-6393D90F3A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB20C267-8231-4289-ADF7-28F017A01007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB20C267-8231-4289-ADF7-28F017A01007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB20C267-8231-4289-ADF7-28F017A01007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB20C267-8231-4289-ADF7-28F017A01007}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25FDE320-C9CF-4ABC-B2BD-E62B2294EC34}
+	EndGlobalSection
+EndGlobal
